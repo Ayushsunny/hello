@@ -47,7 +47,7 @@ class MagicQuillProxyServer {
   private initializeMiddleware(): void {
     // CORS configuration
     const corsOptions = {
-      origin: ['http://localhost:8080', 'http://localhost:3000'], // Adjust as needed
+      origin: '*', // Allow requests from any origin
       methods: ['POST', 'OPTIONS'],
       allowedHeaders: ['Content-Type', 'Authorization']
     };
