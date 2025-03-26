@@ -37,12 +37,12 @@ class MagicQuillProxyServer {
   private port: number;
   private gradioClient: Client | null = null;
 
-  constructor(port: number = 3000) {
+  constructor() {
     this.app = express();
-    this.port = port;
+    this.port = parseInt(process.env.PORT!, 10); // Railway will inject PORT dynamically
     this.initializeMiddleware();
     this.initializeRoutes();
-  }
+  }  
 
   private initializeMiddleware(): void {
     // CORS configuration
@@ -187,9 +187,9 @@ class MagicQuillProxyServer {
 
   public start(): void {
     this.app.listen(this.port, () => {
-      console.log(`🚀 Proxy server running at http://localhost:${this.port}`);
+      console.log(`🚀 Proxy server running on port ${this.port}`);
     });
-  }
+  }  
 }
 
 // Instantiate and start the server
