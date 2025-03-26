@@ -1,0 +1,22 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "main": "server.ts",
+  "scripts": {
+    "start": "node --no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node server.ts"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@gradio/client": "^1.14.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
